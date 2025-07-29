@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Chamado - Painel de Chamados TI</title>
+    <link rel="stylesheet" href="/styles/usuario.css">
+    
+    <link rel="stylesheet" href="/styles/shared.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo">
+            <span class="node-icon">⬢</span>
+            <h1>Novo Chamado</h1>
+        </div>
+        <nav class="user-nav">
+            <label class="theme-toggle">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="toggle-slider"></span>
+            </label>
+
+            <span class="user-name" id="unidade-container">
+                <span id="unidade"><%= unidade %></span>
+                <div class="unidade-dropdown" id="unidade-dropdown">
+                    <a href="/chamado/op1" class="unidade-option">Opções</a>
+                    
+                </div>
+            </span>
+
+            <button class="btn-logout btn">Agente</button>
+        </nav>
+    </header>
+    
+    <main class="user-container">
+        <form class="chamado-form">
+            <form class="chamado-form">
+    <div class="form-group">
+        <label>Título do Chamado</label>
+        <div class="problem-selector">
+
+            <div class="problem-option" data-problem="digital-nao-pegando">
+                Computador não Liga
+            </div>
+            <div class="problem-option" data-problem="ped-no-adulto">
+                Problemas com a internet
+            </div>
+            
+            <div class="problem-option" data-problem="ped-no-adulto">
+                Computador Lento
+            </div>
+           
+            <div class="problem-option" data-problem="ped-no-adulto">
+                Impressora
+            </div>
+           
+            <div class="problem-option" data-problem="outro">
+                Outro
+            </div>
+        </div>
+
+        
+        <div id="outro-problem-container" style="display: none;">
+            <div class="form-group">
+                <label for="outro-problem">Descreva o problema:</label>
+                <input type="text" id="outro-problem" class="form-control" placeholder="Descreva o problema em detalhes">
+            </div>
+        </div>
+        
+    </div>
+    
+   
+    <div class="form-group">
+        <label for="sala">Sala</label>
+        <select id="sala" required>
+            <option value="">Selecione a sala...</option>
+            <% for(let i = 0; i < tudo.length; i++){  %>
+                <option value="<%= tudo[i] %>"><%= tudo[i] %></option>
+            <% } %>
+
+        </select>
+    </div>
+    
+    <button type="submit" class="btn-submit btn">Abrir Chamado</button>
+</form>
+        
+        <div class="notification-container" id="notification">
+            <!-- Notificações serão exibidas aqui -->
+        </div>
+    </main>
+    
+    <script src="/js/usuario.js"></script>
+</body>
+</html>

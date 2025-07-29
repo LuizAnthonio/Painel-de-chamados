@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidade Não Encontrada - Painel de Chamados TI</title>
+    <link rel="stylesheet" href="/styles/shared.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .error-icon {
+            font-size: 5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .error-title {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .error-message {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn-home {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-home:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        body.dark-mode .error-title,
+        body.dark-mode .error-message {
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo">
+            <span class="node-icon">⬢</span>
+            <h1>Unidade Não Encontrada</h1>
+        </div>
+        <nav class="user-nav">
+            <label class="theme-toggle">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="toggle-slider"></span>
+            </label>
+            <button class="btn-logout btn">Voltar</button>
+        </nav>
+    </header>
+    
+    <main class="error-container">
+        <div class="error-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h1 class="error-title">Unidade Não Encontrada</h1>
+        <p class="error-message">
+            A unidade que você está tentando acessar não foi encontrada em nosso sistema. 
+            Verifique se o nome está correto ou entre em contato com o suporte técnico.
+        </p>
+        <div class="error-actions">
+            <a href="/" class="btn btn-home">
+                <i class="fas fa-home"></i> Página Inicial
+            </a>
+            <a href="/chamados" class="btn">
+                <i class="fas fa-ticket-alt"></i> Ver Chamados
+            </a>
+            <a href="mailto:suporte@seusistema.com" class="btn">
+                <i class="fas fa-envelope"></i> Contatar Suporte
+            </a>
+        </div>
+    </main>
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        // Dark mode toggle (mantendo consistência com outras páginas)
+        document.addEventListener('DOMContentLoaded', function() {
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('change', function() {
+                    document.body.classList.toggle('dark-mode', this.checked);
+                    localStorage.setItem('darkMode', this.checked);
+                });
+                
+                if (localStorage.getItem('darkMode') === 'true') {
+                    darkModeToggle.checked = true;
+                    document.body.classList.add('dark-mode');
+                }
+            }
+            
+            // Botão de voltar
+            document.querySelector('.btn-logout').addEventListener('click', function() {
+                window.history.back();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Chamado - Painel de Chamados TI</title>
+    <link rel="stylesheet" href="/styles/usuario.css">
+    
+    <link rel="stylesheet" href="/styles/shared.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo">
+            <span class="node-icon">⬢</span>
+            <h1>Cadastrar Unidade</h1>
+        </div>
+        <nav class="user-nav">
+            <label class="theme-toggle">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="toggle-slider"></span>
+            </label>
+
+            <span class="user-name" id="unidade-container">
+                <span id="unidade"></span>
+                <div class="unidade-dropdown" id="unidade-dropdown">
+                    <a href="/chamado/pajuçara" class="unidade-option">PAJUÇARA</a>
+                    <a href="/chamado/esperança" class="unidade-option">ESPERANÇA</a>
+                    <a href="/chamado/satelite" class="unidade-option">SATELITE</a>
+                    <a href="/chamado/potengi" class="unidade-option">POTENGI</a>
+                </div>
+            </span>
+
+            
+        </nav>
+    </header>
+
+     <%- include("./parts/menu-lateral.html") %>
+
+    <main class="user-container">
+        <form class="chamado-form" id="unidadeForm" >
+            
+    <div class="form-group" >
+        <label>Nome da Unidade</label>
+        <input type="text" name="nome" id="nomeUni">
+        
+    </div>
+   <div class="form-group">
+    <label>Adicione Sala</label>
+    <div class="add">
+        <input type="text" name="sala" id="sala">
+        <a class="btn" id="btnAdicionar">adicionar</a>
+    </div>
+ 
+    <div id="listaSalas" class="salas-container"></div>
+</div>
+    
+
+    
+    <button type="submit" class="btn-submit btn">Cadastrar Unidade</button>
+</form>
+        
+        <div class="notification-container" id="notification">
+            <!-- Notificações serão exibidas aqui -->
+        </div>
+    </main>
+    
+    <script src="/js/unidade.js"></script>
+</body>
+</html>

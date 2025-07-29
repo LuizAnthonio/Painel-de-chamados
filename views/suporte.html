@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Suporte - Chamados TI</title>
+    <link rel="stylesheet" href="styles/suporte.css">
+    <link rel="stylesheet" href="styles/shared.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo">
+            <span class="node-icon">⬢</span>
+            <h1>Painel de Suporte</h1>
+        </div>
+        <nav class="user-nav" >
+           
+            <label class="theme-toggle">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="toggle-slider"></span>
+            </label>
+            
+        </nav>
+    </header>
+
+    <audio src="som/notificacao.mp3"></audio>
+    
+
+    <%- include("./parts/menu-lateral.html") %>
+
+    <main class="support-container">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="pendentes">Pendentes</button>
+            <button class="tab-btn" data-tab="andamento">Em Andamento</button>
+            <button class="tab-btn" data-tab="concluidos">Concluídos</button>
+        </div>
+        
+        <div class="search-filter">
+            <div class="search-box">
+            
+                <div class="filter-box">
+                    
+                    <select id="filter-unidade">
+                        <option value="all">Todas as unidades</option>
+                       
+                    </select>
+                </div>
+    
+                
+            </div>
+            <div class="filter-box">
+                <select id="filter-priority">
+                    <option value="all">Todas Prioridades</option>
+                    <option value="baixa">Baixa</option>
+                    <option value="media">Média</option>
+                    <option value="alta">Alta</option>
+
+                </select>
+            </div>
+        </div>
+        
+        <div class="chamados-table-container">
+            <table class="chamados-table">
+                <thead>
+                    <tr>
+                        <th>Problema</th>
+                        <th>Local</th>
+                        <th>Prioridade</th>
+                        <th>Data</th>
+                        <th>Tempo Decorrido</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="chamados-body">
+
+               
+
+
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="notification-container" id="notification">
+            <!-- Notificações serão exibidas aqui -->
+        </div>
+    </main>
+    
+    <!-- Modal para detalhes do chamado -->
+    <div class="modal" id="chamado-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Detalhes do Chamado</h2>
+            <div class="modal-body" id="modal-body">
+              
+            </div>
+            <div class="modal-actions" id="modal-actions">
+                <!-- Ações do modal serão preenchidas via JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/suporte.js"></script>
+</body>
+</html>
