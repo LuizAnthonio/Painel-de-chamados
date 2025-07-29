@@ -12,8 +12,8 @@ const session = require("express-session")
 const connectDatabase = () =>{
     console.log('Esperando conexão');
     
-    mongoose.connect("mongodb+srv://Zezin0001:yGEFbGDqtV4MzNFH@cluster0.o5bhl.mongodb.net/interativo?retryWrites=true&w=majority",{ useNewUrlParser: true, useUnifiedTopology: true }).then(()=> console.log('Mongo Conectado Com SUCESSO!')).catch((error)=> console.log(error))
-   // mongoose.connect("SEUBANCODEDADOS",{ useNewUrlParser: true, useUnifiedTopology: true }).then(()=> console.log('Mongo Conectado Com SUCESSO!')).catch((error)=> console.log(error))
+    
+    mongoose.connect("SEUBANCODEDADOS",{ useNewUrlParser: true, useUnifiedTopology: true }).then(()=> console.log('Mongo Conectado Com SUCESSO!')).catch((error)=> console.log(error))
 }
 
 connectDatabase();
