@@ -18,10 +18,18 @@
 - **Autenticação**: Session-based ou JWT (adicione aqui o método usado).  
 
 ## 📸 Screenshots  
+
+### Login
 <img width="1913" height="931" alt="image" src="https://github.com/user-attachments/assets/d3894318-b15f-4030-8f96-d86be2c12d1b" />
+
+### Cadastro
 <img width="1913" height="931" alt="image" src="https://github.com/user-attachments/assets/2de5125a-0ce0-4d4f-846b-7772df720a42" />
+
+### Abrir chamado
 <img width="1714" height="934" alt="Captura de tela de 2025-07-28 21-05-22" src="https://github.com/user-attachments/assets/1e446e73-08af-4c77-8b88-cde804b34133" />
 <img width="1714" height="934" alt="Captura de tela de 2025-07-28 21-05-29" src="https://github.com/user-attachments/assets/fe465b49-7610-4611-a577-ece8e692659c" />
+
+### Painel de Chamados
 <img width="1913" height="931" alt="Captura de tela de 2025-07-28 21-08-17" src="https://github.com/user-attachments/assets/b3110393-9492-4a42-96aa-3cb829116be0" />
 <img width="1913" height="931" alt="Captura de tela de 2025-07-28 21-08-31" src="https://github.com/user-attachments/assets/d102eede-69a3-4876-ab65-17f5ce64c751" />
 
